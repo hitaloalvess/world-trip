@@ -1,9 +1,10 @@
-import { useColorMode, useColorModeValue, Box } from '@chakra-ui/react';
+import { Box, Flex, Text, Image, Wrap, WrapItem } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import worldTripServer  from '../server'
 
-import Header from '../components/Header'
-import Banner from '../components/Banner';
+import Header from '../components/Header/'
+import Banner from '../components/Home/Banner';
+import TravelTypes from '../components/Home/TravelTypes';
 export default function Home(){
     
     worldTripServer();
@@ -21,13 +22,10 @@ export default function Home(){
 
     
     return(
-        <>
         <Box>
-            <>
                 <Header />
                 <Banner />
-            </>
+                <TravelTypes />
         </Box>
-        </>
     )
 }

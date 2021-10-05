@@ -1,6 +1,6 @@
 import { Icon, Flex, Image} from '@chakra-ui/react'
 import { RiArrowDropLeftLine, RiMoonLine, RiSunLine } from 'react-icons/ri'
-import ButtonTheme from '../ButtonTheme';
+import ButtonTheme from './ButtonTheme';
 
 export default function Header(){
     return(
@@ -12,7 +12,7 @@ export default function Header(){
         >
             <Flex
                 position="relative"
-                w="80%"
+                w={["95%" ,"80%"]}
                 m="auto"
                 justify="center"
                 align="center"
