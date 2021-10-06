@@ -7,18 +7,23 @@ interface TravelTypesItemProps{
     title: string;
     src: string ;
     isLastChild?:boolean;
+    alignRight?:boolean;
 }
 
-export default function TravelTypesItem( { title, src, isLastChild } : TravelTypesItemProps){
+export default function TravelTypesItem( { title, src, isLastChild, alignRight } : TravelTypesItemProps){
 
     const isWideVersion = useBreakpointValue({
         base: false,
         md:true,
         lg:true
     })
-    {/*ml="auto"*/}
+
     return(
-        <GridItem mx={isLastChild && "auto"}  colSpan={ isLastChild ? 2 : 1}>
+        <GridItem 
+            mx={ ( isLastChild && !isWideVersion) && "auto"}  
+            colSpan={ (isLastChild && !isWideVersion) ? 2 : 1}
+            ml={ ( alignRight && !isWideVersion ) && "auto"}
+        >
                 <Stack
                     direction={["row", "column"]}
                     align="center"
