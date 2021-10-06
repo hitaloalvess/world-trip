@@ -1,24 +1,11 @@
 import { Box, Divider, Text } from '@chakra-ui/react';
-import worldTripServer  from '../server'
 
 import Header from '../components/Header/'
 import Banner from '../components/Home/Banner';
 import TravelTypes from '../components/Home/TravelTypes';
+import { Slider } from '../components/Home/Slider';
+
 export default function Home(){
-    
-    worldTripServer();
-    
-    // useEffect(() => {
-    //     async function searchContinent(){
-    //         const response = await fetch('/api/continents')
-    //         const data = await response.json()
-
-    //         console.log(data)
-    //     }
-
-    //     searchContinent()
-    // },[])
-
     
     return(
         <Box>
@@ -41,6 +28,9 @@ export default function Home(){
                         Vamos nessa? <br/>Então escolha seu continente
                     </Text>
                 </Box>
+                {/* <Box>
+                    <Slider />
+                </Box> */}
         </Box>
     )
 }
