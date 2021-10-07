@@ -3,7 +3,7 @@ import { Box, Divider, Text } from '@chakra-ui/react';
 import Header from '../components/Header/'
 import Banner from '../components/Home/Banner';
 import TravelTypes from '../components/Home/TravelTypes';
-import { Slider } from '../components/Home/Slider';
+import { Slider } from '../components/Home/Slide';
 
 export default function Home(){
     
