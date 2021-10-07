@@ -33,7 +33,7 @@ export default function TravelTypesItem( { title, src, isLastChild, alignRight }
                         <Image src={src} alt={title} w={16} h={16} /> :
                         <Icon
                             as={FaCircle}
-                            color="yellow"
+                            color="yellow.500"
                             w={2}
                             h={2} 
                         />

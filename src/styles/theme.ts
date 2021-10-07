@@ -7,8 +7,10 @@ const config : ThemeConfig = {
 
 export const theme = extendTheme({
     config,
-    color:{
-        yellow:"#FFBA08",
+    colors:{
+        yellow:{
+            "500":"#FFBA08"
+        },
         gray:{
             "50": "#F5F8FA",
             "300": "#DADADA",
@@ -17,6 +19,7 @@ export const theme = extendTheme({
             "600":"#47585B",
             "900":"#2F3437"
         },
+        white:"#FFF",
 
     },
     fonts:{
