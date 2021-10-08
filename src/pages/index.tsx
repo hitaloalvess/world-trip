@@ -1,12 +1,29 @@
 import { Box, Divider, Text } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import { api } from '../services/api';
+import { Continent} from '../types'
 
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import TravelTypes from '../components/TravelTypes';
-import { Slider } from '../components/Slide';
+import { Slide } from '../components/Slide';
+
 
 export default function Home(){
     
+    const [continents, setContinents] = useState<Continent[]>([]);
+
+    useEffect(() => {
+        async function searchContinents(){
+            const response = await api('/api/continents')
+            const data = response.data
+
+            setContinents(data);
+        }
+
+        searchContinents();
+    }, []);
+
     return(
         <Box>
                 <Header />
@@ -28,9 +45,10 @@ export default function Home(){
                         Vamos nessa? <br/>Então escolha seu continente
                     </Text>
                 </Box>
-                {/* <Box>
-                    <Slider />
-                </Box> */}
+                <Box>
+                    <Slide continents={continents} />
+                </Box>
         </Box>
     )
 }
+

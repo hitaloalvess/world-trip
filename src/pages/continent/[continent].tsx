@@ -1,29 +1,12 @@
-import { api } from '../../services/api'
 import { GetStaticProps, GetStaticPaths} from 'next';
-import { Flex, Image, Box, Text, Stack, HStack, VStack, Icon, Wrap, Tooltip} from '@chakra-ui/react'
-import { FiInfo} from 'react-icons/fi'
-import { InfoIcon } from '@chakra-ui/icons'
 import Head from 'next/head'
+import { Flex, Image, Box, Text, Stack, HStack, VStack, Icon, Wrap, Tooltip} from '@chakra-ui/react'
+import { InfoIcon } from '@chakra-ui/icons'
+import { api } from '../../services/api'
+import { Continent } from '../../types'
 
 import Header from '../../components/Header';
 import Card from '../../components/Card';
-
-type Continent = {
-    id:string;
-    name:string;
-    banner:string;
-    description:string;
-    number_countries: number;
-    number_languages: number;
-    number_most_popular_cities: number;
-    most_popular_cities:{
-        slug:string;
-        name:string;
-        banner: string;
-        country: string;
-        countryCode:string;
-    }[]
-}
 
 interface ContinentProps{
     continent: Continent;
@@ -213,7 +196,7 @@ export const getStaticProps : GetStaticProps = async({params }) => {
         const { continent } = params
 
         const response = await api(`/continents/${continent}`);
-        const data = await response.data;
+        const data = response.data;
         
         return {
             props:{

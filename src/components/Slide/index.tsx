@@ -1,16 +1,17 @@
 import { Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore ,{  Navigation, Pagination, Scrollbar, A11y  } from 'swiper'
 import { Flex } from '@chakra-ui/react'
+import { Continent } from '../../types';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import SlideItem from './SlideItem';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
-export function Slider(){
+interface SlideProps{
+    continents: Continent[];
+}
+
+export function Slide({continents} : SlideProps){
 
     return(
         <Flex
@@ -23,22 +24,18 @@ export function Slider(){
             <Swiper
                 slidesPerView={1}
                 navigation
+                loop={true}
                 pagination={{ clickable: true}}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
             >
-                <SwiperSlide>
-                    <SlideItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <SlideItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <SlideItem />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <SlideItem />
-                </SwiperSlide>
+                { continents.map( continent => (
+                    <SwiperSlide key={continent.id}>
+                        <SlideItem 
+                            banner={continent.banner}
+                            name={continent.name}
+                        />
+                    </SwiperSlide>
+                ))}
+
             </Swiper>
          </Flex>
     );
