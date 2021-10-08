@@ -12,7 +12,8 @@ export default function Banner(){
     })
 
     return(
-        <Flex
+                <Flex
+                    as="section"
                     position="relative"
                     h="360"
                     w="100%"
@@ -30,7 +31,6 @@ export default function Banner(){
                         zIndex="-1"
                     />    
                     <Flex
-                        as="section"
                         justify="space-between"
                         align="center"
                         maxWidth="90%"

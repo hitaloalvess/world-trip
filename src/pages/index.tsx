@@ -25,30 +25,32 @@ export default function Home(){
     // }, []);
 
     return(
-        <Box>
+        <>
                 <Header />
-                <Banner />
-                <TravelTypes />
-                <Divider
-                  w={["60px", "80px"]}
-                  borderColor="gray.600"
-                  mx="auto"
-                  mb={[6, 12]} 
-                />
+                <Box as="main">
+                    <Banner />
+                    <TravelTypes />
+                    <Divider
+                    w={["60px", "80px"]}
+                    borderColor="gray.600"
+                    mx="auto"
+                    mb={[6, 12]} 
+                    />
 
-                <Box w="80%" mx="auto">
-                    <Text
-                        fontSize={["xl", "3xl"]}
-                        textAlign="center"
-                        fontWeight="500"
-                    >
-                        Vamos nessa? <br/>Então escolha seu continente
-                    </Text>
+                    <Box as="section" w="80%" mx="auto">
+                        <Text
+                            fontSize={["xl", "3xl"]}
+                            textAlign="center"
+                            fontWeight="500"
+                        >
+                            Vamos nessa? <br/>Então escolha seu continente
+                        </Text>
+                    </Box>
+                    {/* <Box>
+                        <Slide continents={continents} />
+                    </Box> */}
                 </Box>
-                {/* <Box>
-                    <Slide continents={continents} />
-                </Box> */}
-        </Box>
+        </>
     )
 }
 

@@ -70,6 +70,7 @@ export default function Continent( { continent } : ContinentProps){
                     mx="auto"
                 >
                     <Stack
+                        as="article"
                         direction={["column", "row"]}
                         justify="space-between"
                         spacing={18}
@@ -82,7 +83,7 @@ export default function Continent( { continent } : ContinentProps){
                         >
                             {continent.description}
                         </Text>
-                        <HStack spacing={10} as="article">
+                        <HStack spacing={10}>
                             <VStack
                             >
                                 <Text
