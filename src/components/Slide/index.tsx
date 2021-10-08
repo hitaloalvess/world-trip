@@ -32,6 +32,7 @@ export function Slide({continents} : SlideProps){
                         <SlideItem 
                             banner={continent.banner}
                             name={continent.name}
+                            id={continent.id}
                         />
                     </SwiperSlide>
                 ))}

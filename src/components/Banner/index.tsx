@@ -1,6 +1,8 @@
 import { Flex, Image, Box, Text} from '@chakra-ui/react'
 import { useBreakpointValue } from '@chakra-ui/media-query'
 
+import styles from './banner.module.scss'
+
 export default function Banner(){
 
     const isWideVersion = useBreakpointValue({
@@ -57,14 +59,26 @@ export default function Banner(){
                             </Text>
                         </Box>
                         { isWideVersion && (
-                            <Image
-                                src="/images/airplane.svg"
-                                alt="image airplane" 
-                                w="400"
-                                height="270"
-                                ml="100"
-                                alignSelf="flex-end"
-                            />
+                            //
+                            <Box w="400px" h="270px" ml="100" alignSelf="flex-end" position="relative">
+                                <Image
+                                    src="/images/clouds.svg"
+                                    alt="image cloud"
+                                    position="absolute"
+                                    w="100%"
+                                    h="100%"
+                                    top="0"
+                                    left="0"
+                                    right="0"
+                                />
+                                 <Image
+                                    className={styles['animation-plane']}
+                                    src="/images/plane.svg"
+                                    alt="image airplane" 
+                                    w="100%"
+                                    height="100%"
+                                />
+                            </Box>
                         )}
                     </Flex>
                 </Flex>

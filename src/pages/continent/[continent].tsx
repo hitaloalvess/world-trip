@@ -1,15 +1,16 @@
 import { GetStaticProps, GetStaticPaths} from 'next';
 import Head from 'next/head'
-import { Flex, Image, Box, Text, Stack, HStack, VStack, Icon, Wrap, Tooltip} from '@chakra-ui/react'
+import { Flex, Image, Box, Text, Stack, HStack, VStack, Wrap, Tooltip} from '@chakra-ui/react'
 import { InfoIcon } from '@chakra-ui/icons'
+
 import { api } from '../../services/api'
-import { Continent } from '../../types'
+import { Continent as ContinentType} from '../../types'
 
 import Header from '../../components/Header';
 import Card from '../../components/Card';
 
 interface ContinentProps{
-    continent: Continent;
+    continent: ContinentType;
 }
 
 export default function Continent( { continent } : ContinentProps){
@@ -23,6 +24,7 @@ export default function Continent( { continent } : ContinentProps){
             <Header />
 
             <Box as="main">
+                {/*BANNER*/}
                 <Flex
                     as="section"
                     w="100%"
@@ -60,6 +62,7 @@ export default function Continent( { continent } : ContinentProps){
                         </Text>
                     </Flex>
                 </Flex>
+                {/*INFO*/}
                 <Box
                     as="section"
                     w={["90%", "80%"]}
@@ -147,6 +150,7 @@ export default function Continent( { continent } : ContinentProps){
                         </HStack>
 
                     </Stack>
+                    {/*CIDADES MAIS VISITADAS*/}
                     <VStack
                         as="section"
                         spacing={10}
@@ -186,8 +190,14 @@ export default function Continent( { continent } : ContinentProps){
 export const getStaticPaths: GetStaticPaths = () => {
 
     return{
-        paths:[],
-        fallback: 'blocking'
+        paths:[
+            {params: {continent: 'america'}},
+            {params: {continent: 'asia'}},
+            {params: {continent: 'africa'}},
+            {params: {continent: 'europa'}},
+            {params: {continent: 'oceania'}}
+        ],
+        fallback: false
     }
 }
 

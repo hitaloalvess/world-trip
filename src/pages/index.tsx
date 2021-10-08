@@ -11,18 +11,18 @@ import { Slide } from '../components/Slide';
 
 export default function Home(){
     
-    const [continents, setContinents] = useState<Continent[]>([]);
+    // const [continents, setContinents] = useState<Continent[]>([]);
 
-    useEffect(() => {
-        async function searchContinents(){
-            const response = await api('/api/continents')
-            const data = response.data
+    // useEffect(() => {
+    //     async function searchContinents(){
+    //         const response = await api('/api/continents')
+    //         const data = response.data
 
-            setContinents(data);
-        }
+    //         setContinents(data);
+    //     }
 
-        searchContinents();
-    }, []);
+    //     searchContinents();
+    // }, []);
 
     return(
         <Box>
@@ -45,9 +45,9 @@ export default function Home(){
                         Vamos nessa? <br/>Então escolha seu continente
                     </Text>
                 </Box>
-                <Box>
+                {/* <Box>
                     <Slide continents={continents} />
-                </Box>
+                </Box> */}
         </Box>
     )
 }

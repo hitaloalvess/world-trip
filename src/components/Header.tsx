@@ -1,8 +1,13 @@
-import { Icon, Flex, Image} from '@chakra-ui/react'
-import { RiArrowDropLeftLine, RiMoonLine, RiSunLine } from 'react-icons/ri'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { Icon, Flex, Image, Button} from '@chakra-ui/react'
+import { RiArrowDropLeftLine } from 'react-icons/ri'
 import ButtonTheme from './ButtonTheme';
 
 export default function Header(){
+
+    const { asPath } = useRouter()
+
     return(
         <Flex
           as="header"
@@ -16,13 +21,23 @@ export default function Header(){
                 m="auto"
                 justify="center"
                 align="center"
-            >
-                <Icon
-                  as={RiArrowDropLeftLine}
-                  position="absolute"
-                  left="0"
-                  fontSize="40" 
-                />
+            >   
+                { asPath !== '/' && (
+                    <Link href='/'>
+                        <Button
+                            position="absolute"
+                            left="0"
+                            bg="transparent"
+                        >
+                            <Icon
+                                as={RiArrowDropLeftLine}
+                                
+                                fontSize="40" 
+                            />
+                        </Button>
+                    </Link>
+                )}
+                
 
                 <Image src="/images/logo.svg" alt="world trip logo" justifySelf="center" />
             
