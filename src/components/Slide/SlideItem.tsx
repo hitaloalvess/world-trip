@@ -10,7 +10,7 @@ interface SlideItemProps{
 export default function SlideItem({ banner, name, id} : SlideItemProps){
 
     return(
-        <Link href={`/continent/${id}`}>
+        
             <Box
                 position="relative"
                 h="100%"
@@ -26,11 +26,24 @@ export default function SlideItem({ banner, name, id} : SlideItemProps){
                 <Flex
                     w="100%"
                     h="100%"
+                    justify="center"
+                    align="center"
                     bgGradient="linear(to-b, rgba(28, 20, 1, 0.35), rgba(28, 20, 1, 0.35))"
                 >
-                    <Text>{name}</Text>
+                    <Link href={`/continent/${id}`}>
+                        <Text
+                            fontSize={["3xl","5xl"]}
+                            fontWeight="700"
+                            color="white"
+                            _hover={{
+                                textDecoration:"underline",
+                                cursor:"pointer"
+                            }}
+                        >
+                            {name}
+                        </Text>
+                    </Link>
                 </Flex>
             </Box>
-        </Link>
     );
 }

@@ -1,11 +1,11 @@
 import { Swiper, SwiperSlide} from 'swiper/react'
-import SwiperCore ,{  Navigation, Pagination, Scrollbar, A11y  } from 'swiper'
+import SwiperCore ,{  Navigation, Pagination, Scrollbar, A11y, Autoplay  } from 'swiper'
 import { Flex } from '@chakra-ui/react'
 import { Continent } from '../../types';
 
 import SlideItem from './SlideItem';
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay])
 
 interface SlideProps{
     continents: Continent[];
@@ -24,8 +24,12 @@ export function Slide({continents} : SlideProps){
             <Swiper
                 slidesPerView={1}
                 navigation
-                loop={true}
-                pagination={{ clickable: true}}
+                loop
+                autoplay={{
+                    "delay":3000,
+                    "disableOnInteraction": false
+                }}
+                pagination={{ "dynamicBullets": true}}
             >
                 { continents.map( continent => (
                     <SwiperSlide key={continent.id}>

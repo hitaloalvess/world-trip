@@ -2,6 +2,11 @@
     .swiper-button-prev,
     .swiper-button-next {
         color: #FFBA08;
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        &:hover {
+            opacity: 1;
+        }
     }
     .swiper-pagination {
         .swiper-pagination-bullet {
