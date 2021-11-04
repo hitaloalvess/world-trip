@@ -2,9 +2,9 @@
   <img alt="logo world-trip" title="world-trip" src=".github/logo.png" width="400px" />
 </h1>
 
-<!-- <p align="center">
-     <img src=".github/" alt="world-trip demo" />
-</p> -->
+<p align="center">
+     <img src=".github/preview.gif" alt="world-trip demo" />
+</p>
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
